@@ -1,0 +1,29 @@
+%ajuste-inicial {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+%encabezados{
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+%propiedades-S3{
+    display: flex;
+    font-weight: bold;
+}
+
+%atributos-div-s5{
+    display: flex;
+    background-color: #E5CB9F;
+}
+
+%atributos-p-s5{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    background-color: #e6c372 ;
+}

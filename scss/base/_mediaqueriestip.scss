@@ -1,0 +1,250 @@
+/*Anteriores*/
+
+/* Tablets */ 
+
+@media screen and (min-width: 740px) and (max-width: 1045px) { 
+
+    body{
+        main{
+            .seccion-1{
+                .principal{
+                    width: 100%;
+                    p{
+                        font-size: 3vh;
+                    }
+                }
+                div{
+                    a{
+                        width: 100%;
+                        font-size: 80%;
+                        text-align: center;
+                    }
+                }
+            }
+            .seccion-2{
+                grid-template-columns: 2fr 1fr;
+                .texto{
+                    width: auto;
+                    line-height: normal;
+                    .titulo{
+                        font-size: 80%;
+                        padding: 0;
+                    }                
+                    p{
+                        font-size: 80%;
+                    }
+                }
+            }
+            .seccion-3{
+                height: auto;
+            }
+            .seccion-4{
+                height: auto;
+                grid-template-columns: 60% 40%;
+                .tituloS4{
+                    width: 1fr;
+                    h2{
+                        font-size: 220%;
+                        span{
+                            font-size: 220%;
+                            left: 18%;
+                        }
+                    }
+                }
+                .textoS4{
+                    ol{
+                        height: 60vw;
+                        font-size: 80%;
+                    }
+                }
+                .imgS4{
+                    right: 20%;
+                    img{
+                       width:120%; 
+                    }
+                }
+            }
+            .seccion-5{
+                grid-template-columns: 30% 30% 40%;
+                .atributo4{
+                    justify-content: end;
+                }
+                .imgS5{
+                    img{
+                        bottom: 40%;
+                        width: 150%;
+                    }
+                }
+                .atributo6 {
+                    justify-content: end;
+                }
+            }
+        }
+    }
+
+}
+
+
+/* mobile */
+@media screen and (max-width: 740px){
+
+    body{
+        header{
+            .buttonTop{
+                a{
+                    margin: 0;
+                    font-size: 70%;
+                }
+            }
+        }
+        main{
+            .seccion-1{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: auto;
+                margin: 0 10px 20px 10px;
+                div{
+                    padding: 25% 10% 0 10%;
+                    a{
+                        font-size: 60%;
+                    }
+                }
+                .principal{
+                    p{
+                        font-size: 1.5vh;
+                    }
+                }
+            }
+            .seccion-2{
+               display: flex;
+               flex-direction: column;
+               height: auto;
+               .imgCabezaS2{
+                display: none;
+               }
+               .texto{
+                margin: 0;
+               }
+               .imgFondoS2{
+                margin: 0 0 10px 0;
+               }
+            }
+            .seccion-3{
+                height: auto;
+                grid-template-rows: 5% 5% 27% 8% 10% 4% 30%;
+                .tituloS3{
+                   h2{
+                    font-size: 170%;
+                   }
+                }
+                .subtituloS3{
+                    font-size: 100%;
+                }
+                .textoS3{
+                    justify-content: center;
+                    p{
+                        margin-bottom: 0;
+                    }
+                }
+                .imgS3{
+                    img{
+                        width: auto;
+                        bottom: 0;
+                    }
+                }
+                .prop1{
+                    p{
+                        align-self: flex-end;
+                    }
+                }
+                .prop3{
+                    p{
+                        align-self: flex-end;
+                    }
+                }
+            }
+            .seccion-4{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: auto;
+                .tituloS4{
+                    width: 100vw;
+                    h2{
+                        font-size: 100%;
+                        span{
+                            font-size: 200%;
+                            left: 18%;
+                            top: 5px;
+                        }
+                    }
+
+                }
+                .textoS4{
+                    justify-content: center;
+                    font-size: 80%;
+                }
+                .imgS4{
+                    display: flex;
+                    justify-content: center;
+                    right: 0;
+                    top: 0;
+                    img{
+                        width: 60%;
+                    }
+                }
+            }
+            .seccion-5{
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                .tituloS5{
+                    flex-direction: column;
+                    justify-content: center;
+                    p{
+                        align-self: center;
+                        font-size: 3.5vh;
+                    }
+                    h2{
+                        align-self: center;
+                        font-size: 4.5vh;
+                    }
+                }
+                .atributo1{
+                    justify-content: start;
+                }
+                .atributo2{
+                    justify-content: end;
+                }
+                .atributo3{
+                    justify-content: start;
+                }
+                .atributo4{
+                    justify-content: end;
+                }
+                .atributo5{
+                    justify-content: start;
+                }
+                .atributo6{
+                    justify-content: end;
+                }
+                .atributo7{
+                    justify-content: start;
+                }
+                .atributo8{
+                    justify-content: end;
+                }
+                .imgS5{
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        width: 80%;
+                        bottom: 30%;
+                    }
+                    
+                }
+            }
+        }
+    }
+}

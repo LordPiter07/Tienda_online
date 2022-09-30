@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="lista de todos los pructos los cuales contamos en la tienda">
+    <meta name="keywords" content="productos, venta, nutricion, tienda">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Edu+VIC+WA+NT+Beginner:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="../img/Logo-Nutrian.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Productos de la Tienda</title>
+</head>
+<body>
+    <header class="container-fluid headerProductos">
+
+        <!--Menu de navegacion para poder moverme a las demas paginas-->
+
+        <nav class="navbar navbar-dark bg-dark fixed-top row navProductos">
+            <div class="container-fluid col-12">
+                <a class="navbar-brand" href="#">PRODUCTOS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MENU</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./la-tienda.html">LA TIENDA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./contacto.html">CONTACTO</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MAS..</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="./mas.html">Tip de la semana</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="./anteriores.html">Anteriores</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>                   
+                </div>
+            </div>
+        </nav>  
+
+    </header>
+    <main class="container-fluid mainProductos">
+
+        <!--titulo principal-->
+
+        <div class="row cabeceraProductos animate__animated animate__fadeInDown">
+            <h1 class="h1Productos col-12 animate__animated animate__fadeInUp"> NUESTROS PRODUCTOS</h1>
+        </div>
+
+        <!--lista de productos dividos en secciones-->
+
+        <div class="row">
+
+            <div class="col-2 lista">
+                <div id="list-example" class="list-group">
+                    <a class="list-group-item list-group-item-action" href="#list-item-1">CEREALES</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-2">DULCES</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-3">INFUSIONES</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-4">LACTEOS</a>
+                </div>
+            </div>
+
+            <div class="col-10 lista">
+                <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+                    <h4 id="list-item-1">CEREALES</h4>
+                    <section class="row text-center justify-content-center productos">
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Arroz.jpeg" class="card-img-top"  alt="paquete de arroz">
+                            <div class="card-body">
+                                <h3 class="card-title">Arroz Yamani</h3>
+                                <p class="card-text">$300,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Granola.jpeg" class="card-img-top" alt="Granola">
+                            <div class="card-body">
+                                <h3 class="card-title">Granola 500gr</h3>
+                                <p class="card-text">$250,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/trigo-inflado.jpg" class="card-img-top" alt="Trigo inflado">
+                            <div class="card-body">
+                                <h3 class="card-title">Trigo inflado 1kg</h3>
+                                <p class="card-text">$380,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Sesamo.png" class="card-img-top" alt="Semillas de sesamo">
+                            <div class="card-body">
+                                <h3 class="card-title">Semillas de sesamo</h3>
+                                <p class="card-text">$270,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/almendra-pd.1.jpg" class="card-img-top"  alt="tason de almendras">
+                            <div class="card-body">
+                                <h3 class="card-title">Almendras 1 kg</h3>
+                                <p class="card-text"><del>$1000,00</del>$800,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Cereal-Almohaditas.jpeg" class="card-img-top" alt="almohaditas rellenas">
+                            <div class="card-body">
+                                <h3 class="card-title">Almohadita 500gr</h3>
+                                <p class="card-text">$350,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/MixFrutosSecos.jpeg" class="card-img-top" alt="frutos secos">
+                            <div class="card-body">
+                                <h3 class="card-title">Frutos Secos 1kg</h3>
+                                <p class="card-text">$760,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/barracereal-pd.3.jpg" class="card-img-top" alt="barras de cereal">
+                            <div class="card-body">
+                                <h3 class="card-title">Barra de Cereal</h3>
+                                <p class="card-text"><del>$170,00</del>$130,00</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h4 id="list-item-2">DULCES</h4>
+                    
+                    <section class="row text-center justify-content-center productos">
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/DulceLeche.jpeg" class="card-img-top" alt="tarro de dulce">
+                            <div class="card-body">
+                                <h3 class="card-title"> Dulce de Leche</h3>
+                                <p class="card-text"> $240,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Mermelada.jpeg" class="card-img-top" alt="Mermelada">
+                            <div class="card-body">
+                                <h3 class="card-title"> Mermelada organica</h3>
+                                <p class="card-text"> $320,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Miel-pd.4.jpg" class="card-img-top" alt="Miel">
+                            <div class="card-body">
+                                <h3 class="card-title"> Miel pura 500gr</h3>
+                                <p class="card-text"><del>$350,00</del> $280,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/pastamani.jpeg" class="card-img-top" alt="tarro de pasta de mani">
+                            <div class="card-body">
+                                <h3 class="card-title"> Pasta de Mani natural</h3>
+                                <p class="card-text"> $360,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/azucar-mascabo.jpeg" class="card-img-top" alt="azucar marron suelta">
+                            <div class="card-body">
+                                <h3 class="card-title"> Azucar mascabo</h3>
+                                <p class="card-text"> $300,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/azucar-rubia.jpeg" class="card-img-top" alt="tason de azucar rubia">
+                            <div class="card-body">
+                                <h3 class="card-title"> Azucar rubia</h3>
+                                <p class="card-text"> $450,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/hileret-sobres.jpeg" class="card-img-top" alt="caja de edulcorante">
+                            <div class="card-body">
+                                <h3 class="card-title"> Hileret sobres</h3>
+                                <p class="card-text"> $260,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/stevia-liquido.jpeg" class="card-img-top" alt="tarro de edulcorante liquido">
+                            <div class="card-body">
+                                <h3 class="card-title"> Hileret liquido</h3>
+                                <p class="card-text"> $320,00</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h4 id="list-item-3">INFUSIONES</h4>
+
+                    <section class="row text-center justify-content-center productos">
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Te-Verde.jpeg" class="card-img-top" alt="te verde">
+                            <div>
+                                <h3 class="card-title"> Te Verde suelto 100gr</h3>
+                                <p class="card-text"> $190,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Te-Negro.png" class="card-img-top" alt="Te">
+                            <div>
+                                <h3 class="card-title"> Te Negro 300gr</h3>
+                                <p class="card-text"> $300,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Yerba antiacida.jpeg" class="card-img-top" alt="Yerba">
+                            <div>
+                                <h3 class="card-title"> Yerba antiacida 1kg</h3>
+                                <p class="card-text"> $840,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Yerba organica.jpeg" class="card-img-top" alt="paquete de yerba">
+                            <div>
+                                <h3 class="card-title"> Yerba organica 500gr</h3>
+                                <p class="card-text"> $530,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/yerba-hierbas.jpeg" class="card-img-top" alt="Paquete de yerba">
+                            <div>
+                                <h3 class="card-title"> Yerba con Hierbas</h3>
+                                <p class="card-text"> $369,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/yerba-naranja.jpeg" class="card-img-top" alt="Paquete de yerba">
+                            <div>
+                                <h3 class="card-title"> Yerba con Naranja</h3>
+                                <p class="card-text"> $369,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/cacao.jpeg" class="card-img-top" alt="Cacao suelto">
+                            <div>
+                                <h3 class="card-title"> Cacao en polvo 500gr</h3>
+                                <p class="card-text"> $900,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/boldo.jpeg" class="card-img-top" alt="caja de te de boldo">
+                            <div>
+                                <h3 class="card-title">Te Boldo en caja</h3>
+                                <p class="card-text"> $380,00</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <h4 id="list-item-4">LACTEOS</h4>
+
+                    <section class="row text-center justify-content-center productos"> 
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/lechealmendras.jpeg" class="card-img-top" alt="caja de leche">
+                            <div>
+                                <h3 class="card-title"> Leche de almendras 1lt</h3>
+                                <p class="card-text"> $280,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Queso.jpg" class="card-img-top" alt="queso">
+                            <div>
+                                <h3 class="card-title"> Queso Sardo 100gr</h3>
+                                <p class="card-text"> $130,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/queso.cremoso.jpg" class="card-img-top" alt="queso cremoso envasado">
+                            <div>
+                                <h3 class="card-title"> Queso Tybo 100gr</h3>
+                                <p class="card-text"> $90,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/Yogur-bebible-light-frutilla.jpg" class="card-img-top" alt="Sachet de yogurt bebible">
+                            <div>
+                                <h3 class="card-title"> Yogurt Bebible frutilla</h3>
+                                <p class="card-text"> $300,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/noquis-papa.jpg" class="card-img-top" alt="Paquete de ñoquis">
+                            <div>
+                                <h3 class="card-title"> Ñoquis de papa</h3>
+                                <p class="card-text"><del>$300</del> $220,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/vegetalex-pd.2.jpg" class="card-img-top" alt="caja de vegetalex">
+                            <div>
+                                <h3 class="card-title"> Vegetalex caja 4u.</h3>
+                                <p class="card-text"> $240,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/yogurt.jpeg" class="card-img-top" alt="tarro de yogurt">
+                            <div>
+                                <h3 class="card-title"> Yogurt con cereales</h3>
+                                <p class="card-text"> $230,00</p>
+                            </div>
+                        </div>
+                        <div class="card col-3 tarjeta" style="width: 10rem;">
+                            <img src="../img/productos/queso-chedar.jpeg" class="card-img-top" alt="paquete de queso cheddar">
+                            <div>
+                                <h3 class="card-title"> Queso Cheddar</h3>
+                                <p class="card-text"> $460,00</p>
+                            </div>
+                        </div>
+                    </section> 
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer class="footerStyle">
+
+        <!-- informacion para transacciones y redes sociales-->
+        <div class="logoPago">
+            <h2 class="h2Pago"> MEDIOS DE PAGO</h2>    
+            <img src="../img/mercadopago.png" alt="Logo de mercado pago">
+            <img src="../img/footer-visa.png" alt="Logo de visa">
+            <img src="../img/footer-transferencia.png" alt="Logo de transferencia bancaria">
+            <img src="../img/footer-efectivo.png" alt="Logo de pago en efectivo">
+        </div>
+
+        <div>
+            <h2 class="h2Posicion"> SEGUINOS</h2>
+            <div class="logoRedes">
+                <img class="logoI" src="../img/footer-Instagram-Logo.png" alt="logo de instagram">
+                <a href="https://www.instagram.com/" target="_blank"><p class="logoStyle"> @TiendaNutriAn</p></a>
+            </div>
+            <div class="logoRedes">
+            <img class="logoF" src="../img/footer-logo.Face.webp" alt="logo de facebook">
+            <a href="https://www.facebook.com/profile.php?id=100054304490210" target="_blank"><p class="logoStyle"> / NutriAn dietetica</p></a>
+            </div>
+        </div>
+
+    </footer>
+    <script src="../script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>
