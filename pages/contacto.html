@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="hoja de contacto, dejanos tu mensaje">
+    <meta name="keywords" content="contacto, mensaje">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Edu+VIC+WA+NT+Beginner:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="shortcut icon" href="../img/Logo-Nutrian.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Contacto</title>
+</head>
+<body class="hojaContacto">
+    <header class="container-fluid headerContacto">
+
+        <!--Menu de navegacion para poder moverme a las demas paginas-->
+
+        <nav class="navbar navbar-dark bg-dark fixed-top row navContacto">
+            <div class="container-fluid col-12">
+                <a class="navbar-brand" href="#">CONTACTO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MENU</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./productos.html">PRODUCTOS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./la-tienda.html">LA TIENDA</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">MAS..</a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="./mas.html">Tip de la semana</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="./anteriores.html">Anteriores</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>                   
+                </div>
+            </div>
+        </nav> 
+
+
+
+    </header>
+    <main class="mainContacto">
+
+        <!--Formulario de contacto-->
+        
+        <form class="formulario animate__animated animate__fadeInRight">
+            <fieldset>
+                <legend> CONTACTO</legend>
+                <div class="form">
+                    <label for="Name"> Nombre Completo</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="form">
+                    <label for="email"> Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="form">
+                    <label for="Celular"> Celular (opcional)</label>
+                    <input type="number" name="celular" id="celular">
+                </div>
+                <div class="formDistinto">
+                    <label for="Mensaje"> Dejanos tu Mensaje!</label>
+                    <input type="text" name="mensaje" id="mensaje">
+                </div>
+                <div class="formButton">
+                    <input type="submit" value="Enviar Mensaje">
+                    <input type="reset" value="Borrar Todo">
+                </div>
+            </fieldset>
+        </form>
+        
+    </main>
+
+    <footer class="footerStyleContacto">
+
+        <!-- informacion para transacciones y redes sociales-->
+        <div class="logoPago">
+            <h2 class="h2Pago"> MEDIOS DE PAGO</h2>    
+            <img src="../img/mercadopago.png" alt="Logo de mercado pago">
+            <img src="../img/footer-visa.png" alt="Logo de visa">
+            <img src="../img/footer-transferencia.png" alt="Logo de transferencia bancaria">
+            <img src="../img/footer-efectivo.png" alt="Logo de pago en efectivo">
+        </div>
+
+        <div>
+            <h2 class="h2Posicion"> SEGUINOS</h2>
+            <div class="logoRedes">
+                <img class="logoI" src="../img/footer-Instagram-Logo.png" alt="logo de instagram">
+                <a href="https://www.instagram.com/" target="_blank"><p class="logoStyle"> @TiendaNutriAn</p></a>
+            </div>
+            <div class="logoRedes">
+            <img class="logoF" src="../img/footer-logo.Face.webp" alt="logo de facebook">
+            <a href="https://www.facebook.com/profile.php?id=100054304490210" target="_blank"><p class="logoStyle"> / NutriAn dietetica</p></a>
+            </div>
+        </div>
+
+    </footer> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+</body>
+</html>

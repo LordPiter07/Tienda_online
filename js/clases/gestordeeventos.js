@@ -24,7 +24,7 @@ class gestorProductos {
 
                 prod.innerHTML = `
                                 <div class="card animacionCard">
-                                    <img src=${producto.img} class="card-img-top"></img>
+                                    <img src="./${producto.img}" class="card-img-top"></img>
                                     <h3 class="h3Index">${producto.descripcion}</h3>
                                     <p class="card-text">$${producto.precio}</p>
                                 </div>
