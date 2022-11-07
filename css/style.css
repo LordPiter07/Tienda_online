@@ -145,6 +145,11 @@ body .headerProductos {
   body .headerProductos .navProductos {
     margin-left: 0;
     margin-right: 0; }
+    body .headerProductos .navProductos .btn.btn-primary {
+      background-color: #36367c;
+      width: 80px;
+      height: 50px;
+      font-size: 20px; }
 
 body .mainProductos {
   padding-right: 0; }

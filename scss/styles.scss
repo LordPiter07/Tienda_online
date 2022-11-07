@@ -203,6 +203,12 @@ body{
         .navProductos{
             margin-left: map-get($map: $nav-pages, $key: margin-menu);
             margin-right: 0;
+            .btn.btn-primary{
+                background-color: rgb(54, 54, 124);
+                width: 80px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
     }
     .mainProductos{

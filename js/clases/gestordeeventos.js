@@ -3,7 +3,7 @@ class gestorProductos {
     iniciar(){
         
         //filtra lista total de productos y arma destacados 
-        let productosDestacados = productos.filter(pd => pd.destacado == 1); 
+        let productosDestacados = listaDeProductos.filter(pd => pd.destacado == 1); 
         this.publicarProductos(productosDestacados);     
     }
 

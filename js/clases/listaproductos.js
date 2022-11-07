@@ -1,8 +1,8 @@
-let productos = new Array();
+let listaDeProductos = new Array();
 
 // Aca deberia cargar todos mis productos! dejando a los destacados diferenciados.
 
-productos = [
+listaDeProductos = [
     {id: 1, img: "img/productos/almendra-pd.1.jpg", descripcion: "Almendras 1kg", precio: 800, destacado: 1, seccion: "cereal"},
     {id: 2, img: "img/productos/noquis-papa.jpg", descripcion: "Noquis de papa", precio: 220, destacado: 1, seccion: "lacteos"},
     {id: 3, img: "img/productos/barracereal-pd.3.jpg", descripcion: "Barra de Cereal", precio: 130, destacado: 0, seccion: "cereal"},  
