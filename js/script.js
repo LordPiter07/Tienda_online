@@ -59,7 +59,7 @@ function publicarPoductos(productos) {
 
         }; 
         
-        //aca se configura el boton "agregar" al carrito
+        //aca configuro el boton "agregar" al carrito
         const boton = document.getElementById(`agregar${prod.id}`);
 
         boton.addEventListener("click", () => {
@@ -72,15 +72,36 @@ function publicarPoductos(productos) {
 
 //Defino mis funciones principales para gestionar la funcionalidad del carro de compras
 const agregarcarrito = (prodId) => {
-    const item = listaDeProductos.find((prod) => prod.id === prodId);
-    carritoCompras.push(item);
+
+    const existeProducto = carritoCompras.some(prod => prod.id === prodId);
+    if(existeProducto){
+        const prod = carritoCompras.map(prod => {
+            if(prod.id === prodId){
+            prod.cantidad++
+            }
+        })
+    } else {
+
+        const item = listaDeProductos.find((prod) => prod.id === prodId);
+        carritoCompras.push(item);
+        console.log(carritoCompras);
+    }
+
     actualizarCarrito();
 }
 
 const eliminarDelCarrito = (prodId) => {
     const item = carritoCompras.find((prod) => prod.id === prodId);
-    const indice = carritoCompras.indexOf(item);
-    carritoCompras.splice(indice, 1);
+
+    if  (item.cantidad == 1){  
+        const indice = carritoCompras.indexOf(item);
+        carritoCompras.splice(indice, 1);
+
+    } else {
+        item.cantidad--;
+       
+    }
+
     actualizarCarrito();
 }
 
@@ -108,12 +129,13 @@ const actualizarCarrito = () => {
                         `
         contenedorCarrito.appendChild(div);
 
-        localStorage.setItem("claveCarrito", JSON.stringify(carritoCompras));
     })
 
     contadorCarrito.innerText = carritoCompras.length;
 
-    precioTotal.innerText = carritoCompras.reduce((acc, prod) => (acc + prod.precio)/**prod.cantidad)*/, 0);
+    precioTotal.innerText = carritoCompras.reduce((acc, prod) => (acc + prod.precio*prod.cantidad), 0);
+
+    localStorage.setItem("claveCarrito", JSON.stringify(carritoCompras));
 }
 
 
