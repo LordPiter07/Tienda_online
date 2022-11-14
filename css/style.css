@@ -80,6 +80,14 @@ body {
         align-self: center; }
       body .mainHome .contenedorDestacados p {
         align-self: center; }
+      body .mainHome .contenedorDestacados div div .botonAgregar {
+        width: 100px;
+        height: 35px;
+        border: none;
+        background-color: #0D4C92;
+        color: white;
+        padding: 5px;
+        border-radius: 0; }
     body .mainHome .animacionCard:hover {
       transform: scale(1.3);
       box-shadow: 2px 2px 10px rgba(75, 72, 72, 0.24); }
@@ -146,10 +154,20 @@ body .headerProductos {
     margin-left: 0;
     margin-right: 0; }
     body .headerProductos .navProductos .btn.btn-primary {
-      background-color: #36367c;
+      display: flex;
+      justify-content: center;
+      align-content: flex-start;
+      background-color: black;
+      border: none;
       width: 80px;
       height: 50px;
-      font-size: 20px; }
+      position: relative;
+      left: 350px; }
+      body .headerProductos .navProductos .btn.btn-primary .bi.bi-cart3 {
+        font-size: 30px; }
+      body .headerProductos .navProductos .btn.btn-primary .contador {
+        font-size: 20px;
+        font-weight: bold; }
 
 body .mainProductos {
   padding-right: 0; }
@@ -162,6 +180,20 @@ body .mainProductos {
       margin-top: 30px; }
   body .mainProductos .row {
     margin-right: 0; }
+    body .mainProductos .row div div section div div .botonAgregar {
+      border: none;
+      background-color: #0D4C92;
+      color: white;
+      padding: 5px; }
+  body .mainProductos div div .productoEnCarrito {
+    margin: 0 0 15px 30px; }
+    body .mainProductos div div .productoEnCarrito img {
+      width: 30%; }
+    body .mainProductos div div .productoEnCarrito .botonEliminar {
+      border: none;
+      background-color: whitesmoke;
+      width: 30px;
+      height: 25px; }
   body .mainProductos div .lista {
     padding: 10px;
     margin: 30px 0; }
@@ -390,187 +422,4 @@ body .mainLaTienda {
         .hojaContacto .mainContacto .formulario fieldset .formButton input {
           width: 70%; }
     .hojaContacto .footerStyleContacto {
-      display: none; }
-  /* Mas.. */
-  body .headerMas .encabezado {
-    height: auto; }
-  body .mainMas {
-    display: flex;
-    flex-direction: column;
-    height: auto; }
-    body .mainMas .anteriores {
-      width: 100%;
-      height: auto;
-      margin-bottom: 30px; }
-      body .mainMas .anteriores .buttonMas {
-        width: auto; }
-    body .mainMas .imgMas {
-      display: flex;
-      justify-content: center;
-      width: auto; }
-      body .mainMas .imgMas img {
-        width: 80%; }
-    body .mainMas .listaTip {
-      width: auto; } }
-
-@media screen and (min-width: 800px) and (max-width: 1000px) {
-  /* Mas..*/
-  body .mainMas .imgMas {
-    justify-content: end; }
-    body .mainMas .imgMas img {
-      width: 80%;
-      height: 80%; } }
-
-/*Anteriores*/
-/* Tablets */
-@media screen and (min-width: 740px) and (max-width: 1045px) {
-  body main .seccion-1 .principal {
-    width: 100%; }
-    body main .seccion-1 .principal p {
-      font-size: 3vh; }
-  body main .seccion-1 div a {
-    width: 100%;
-    font-size: 80%;
-    text-align: center; }
-  body main .seccion-2 {
-    grid-template-columns: 2fr 1fr; }
-    body main .seccion-2 .texto {
-      width: auto;
-      line-height: normal; }
-      body main .seccion-2 .texto .titulo {
-        font-size: 80%;
-        padding: 0; }
-      body main .seccion-2 .texto p {
-        font-size: 80%; }
-  body main .seccion-3 {
-    height: auto; }
-  body main .seccion-4 {
-    height: auto;
-    grid-template-columns: 60% 40%; }
-    body main .seccion-4 .tituloS4 {
-      width: 1fr; }
-      body main .seccion-4 .tituloS4 h2 {
-        font-size: 220%; }
-        body main .seccion-4 .tituloS4 h2 span {
-          font-size: 220%;
-          left: 18%; }
-    body main .seccion-4 .textoS4 ol {
-      height: 60vw;
-      font-size: 80%; }
-    body main .seccion-4 .imgS4 {
-      right: 20%; }
-      body main .seccion-4 .imgS4 img {
-        width: 120%; }
-  body main .seccion-5 {
-    grid-template-columns: 30% 30% 40%; }
-    body main .seccion-5 .atributo4 {
-      justify-content: end; }
-    body main .seccion-5 .imgS5 img {
-      bottom: 40%;
-      width: 150%; }
-    body main .seccion-5 .atributo6 {
-      justify-content: end; } }
-
-/* mobile */
-@media screen and (max-width: 740px) {
-  body header .buttonTop a {
-    margin: 0;
-    font-size: 70%; }
-  body main .seccion-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto;
-    margin: 0 10px 20px 10px; }
-    body main .seccion-1 div {
-      padding: 25% 10% 0 10%; }
-      body main .seccion-1 div a {
-        font-size: 60%; }
-    body main .seccion-1 .principal p {
-      font-size: 1.5vh; }
-  body main .seccion-2 {
-    display: flex;
-    flex-direction: column;
-    height: auto; }
-    body main .seccion-2 .imgCabezaS2 {
-      display: none; }
-    body main .seccion-2 .texto {
-      margin: 0; }
-    body main .seccion-2 .imgFondoS2 {
-      margin: 0 0 10px 0; }
-  body main .seccion-3 {
-    height: auto;
-    grid-template-rows: 5% 5% 27% 8% 10% 4% 30%; }
-    body main .seccion-3 .tituloS3 h2 {
-      font-size: 170%; }
-    body main .seccion-3 .subtituloS3 {
-      font-size: 100%; }
-    body main .seccion-3 .textoS3 {
-      justify-content: center; }
-      body main .seccion-3 .textoS3 p {
-        margin-bottom: 0; }
-    body main .seccion-3 .imgS3 img {
-      width: auto;
-      bottom: 0; }
-    body main .seccion-3 .prop1 p {
-      align-self: flex-end; }
-    body main .seccion-3 .prop3 p {
-      align-self: flex-end; }
-  body main .seccion-4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: auto; }
-    body main .seccion-4 .tituloS4 {
-      width: 100vw; }
-      body main .seccion-4 .tituloS4 h2 {
-        font-size: 100%; }
-        body main .seccion-4 .tituloS4 h2 span {
-          font-size: 200%;
-          left: 18%;
-          top: 5px; }
-    body main .seccion-4 .textoS4 {
-      justify-content: center;
-      font-size: 80%; }
-    body main .seccion-4 .imgS4 {
-      display: flex;
-      justify-content: center;
-      right: 0;
-      top: 0; }
-      body main .seccion-4 .imgS4 img {
-        width: 60%; }
-  body main .seccion-5 {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; }
-    body main .seccion-5 .tituloS5 {
-      flex-direction: column;
-      justify-content: center; }
-      body main .seccion-5 .tituloS5 p {
-        align-self: center;
-        font-size: 3.5vh; }
-      body main .seccion-5 .tituloS5 h2 {
-        align-self: center;
-        font-size: 4.5vh; }
-    body main .seccion-5 .atributo1 {
-      justify-content: start; }
-    body main .seccion-5 .atributo2 {
-      justify-content: end; }
-    body main .seccion-5 .atributo3 {
-      justify-content: start; }
-    body main .seccion-5 .atributo4 {
-      justify-content: end; }
-    body main .seccion-5 .atributo5 {
-      justify-content: start; }
-    body main .seccion-5 .atributo6 {
-      justify-content: end; }
-    body main .seccion-5 .atributo7 {
-      justify-content: start; }
-    body main .seccion-5 .atributo8 {
-      justify-content: end; }
-    body main .seccion-5 .imgS5 {
-      display: flex;
-      justify-content: center; }
-      body main .seccion-5 .imgS5 img {
-        width: 80%;
-        bottom: 30%; } }
+      display: none; } }

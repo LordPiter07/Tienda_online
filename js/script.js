@@ -1,4 +1,5 @@
 
+/*const divProductosDestacados = document.getElementById("productosDestacados");*/
 const contenedorProductosCereal = document.getElementById("seccion-cereales");
 const contenedorProductosDulces = document.getElementById("seccion-dulces");
 const contenedorProductosInfusiones = document.getElementById("seccion-infusiones");
@@ -7,6 +8,7 @@ const contenedorCarrito = document.getElementById("contenedorCarrito");
 const botonVaciar = document.getElementById("vaciarCarrito");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
+
 
 let carritoCompras = new Array();
 
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //Distribuyo la lista de productos en cada seccion segun su tipo.
+
 let productosCereales = listaDeProductos.filter(producto => producto.seccion === "cereal");
 publicarPoductos(productosCereales);
 
@@ -73,6 +76,14 @@ function publicarPoductos(productos) {
 //Defino mis funciones principales para gestionar la funcionalidad del carro de compras
 const agregarcarrito = (prodId) => {
 
+    Toastify({
+        text: "Se agrego el Producto con Exito",
+        className: "info",
+        style: {
+          background: "linear-gradient(to right, #393E46, #497174)",
+        }
+      }).showToast();
+
     const existeProducto = carritoCompras.some(prod => prod.id === prodId);
     if(existeProducto){
         const prod = carritoCompras.map(prod => {
@@ -122,10 +133,11 @@ const actualizarCarrito = () => {
         const div = document.createElement("div");
         div.className = ("productoEnCarrito");
         div.innerHTML = `
+                        <img src="../${prod.img}" alt="">
                         <p>${prod.descripcion}</p>
                         <p>Precio: $${prod.precio},00</p>
                         <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-                        <button onclick ="eliminarDelCarrito(${prod.id})" class="botonEliminar"></button>
+                        <button onclick ="eliminarDelCarrito(${prod.id})" class="botonEliminar"><i class="fa-solid fa-trash-can"></i></button>
                         `
         contenedorCarrito.appendChild(div);
 

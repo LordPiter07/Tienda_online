@@ -139,58 +139,5 @@
             display: none;
         }
     }
-
-    /* Mas.. */ 
-
-    body{
-        .headerMas{
-            .encabezado{
-                height: auto;
-            }
-        }
-        .mainMas{
-            display: flex;
-            flex-direction: column;
-            height: auto;
-            .anteriores{
-                width: 100%;
-                height: auto;
-                margin-bottom: 30px;
-                .buttonMas{
-                    width: auto;
-                }
-            }
-            .imgMas{
-                display: flex;
-                justify-content: center;
-                width: auto;
-                img{
-                    width: 80%;
-                }           
-            }
-            .listaTip{
-                width: auto;
-                }
-        }
-    }
-}
-
-
-@media screen and (min-width: 800px) and (max-width: 1000px) {
     
-    /* Mas..*/
-
-    body{
-        .mainMas{
-            .imgMas{
-                justify-content: end;
-                img{
-                    width: 80%;
-                    height: 80%;
-                }
-            }
-        }
-
-
-    }
 }
