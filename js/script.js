@@ -1,5 +1,4 @@
 
-/*const divProductosDestacados = document.getElementById("productosDestacados");*/
 const contenedorProductosCereal = document.getElementById("seccion-cereales");
 const contenedorProductosDulces = document.getElementById("seccion-dulces");
 const contenedorProductosInfusiones = document.getElementById("seccion-infusiones");
@@ -9,75 +8,67 @@ const botonVaciar = document.getElementById("vaciarCarrito");
 const contadorCarrito = document.getElementById("contadorCarrito");
 const precioTotal = document.getElementById("precioTotal");
 
-
 let carritoCompras = new Array();
 
 document.addEventListener("DOMContentLoaded", () => {
     carritoCompras = JSON.parse(localStorage.getItem("claveCarrito")) || [];
     actualizarCarrito();  
+    cargarProductos();
 })
 
 
-//Distribuyo la lista de productos en cada seccion segun su tipo.
-
-let productosCereales = listaDeProductos.filter(producto => producto.seccion === "cereal");
-publicarPoductos(productosCereales);
-
-let productosDulces = listaDeProductos.filter(producto => producto.seccion === "dulces");
-publicarPoductos(productosDulces);
-
-let productosInfusiones = listaDeProductos.filter(producto => producto.seccion === "infusiones");
-publicarPoductos(productosInfusiones);
-
-let productosLacteos = listaDeProductos.filter(producto => producto.seccion === "lacteos");
-publicarPoductos(productosLacteos);
-
-
 //funcion encargada de tomar los array ya filtados segun seccion e inyectarlos en el html.
-function publicarPoductos(productos) {
-    productos.forEach(prod => {
-        const div = document.createElement("div");
-        div.classList.add("card", "col-3", "tarjeta");
-        div.setAttribute("style","width: 10rem;")
-        div.innerHTML = `
-                        <img src="../${prod.img}" class="card-img-top"  alt="">
-                        <div class="card-body">
-                            <h3 class="card-title">${prod.descripcion}</h3>
-                            <p class="card-text">$${prod.precio},00</p>
-                            <button id="agregar${prod.id}" class="botonAgregar">Agregar <i class="fa-sharp fa-solid fa-cart-arrow-down"></i></button>
-                        </div>
-                        `      
+function cargarProductos() {
 
-        if(prod.seccion === "cereal"){
-            contenedorProductosCereal.appendChild(div);
+    fetch("../js/listadeproductos.json")
+        .then( (resp) => resp.json() )
+        .then( (data) => data.forEach(prod => {
 
-        } else if (prod.seccion === "dulces"){
-            contenedorProductosDulces.appendChild(div);
+            const div = document.createElement("div");
+            div.classList.add("card", "col-3", "tarjeta");
+            div.setAttribute("style","width: 10rem;")
+            div.innerHTML = `
+                            <img src="../${prod.img}" class="card-img-top"  alt="">
+                            <div class="card-body">
+                                <h3 class="card-title">${prod.descripcion}</h3>
+                                <p class="card-text">$${prod.precio},00</p>
+                                <button id="agregar${prod.id}" class="botonAgregar">Agregar <i class="fa-sharp fa-solid fa-cart-arrow-down"></i></button>
+                            </div>
+                            `      
 
-        } else if(prod.seccion === "infusiones"){
-            contenedorProductosInfusiones.appendChild(div);
+            if(prod.seccion === "cereal"){
+                contenedorProductosCereal.appendChild(div);
 
-        } else if(prod.seccion === "lacteos"){
-            contenedorProductosLacteos.appendChild(div);
+            } else if (prod.seccion === "dulces"){
+                contenedorProductosDulces.appendChild(div);
 
-        }; 
-        
-        //aca configuro el boton "agregar" al carrito
-        const boton = document.getElementById(`agregar${prod.id}`);
+            } else if(prod.seccion === "infusiones"){
+                contenedorProductosInfusiones.appendChild(div);
 
-        boton.addEventListener("click", () => {
-            agregarcarrito(prod.id);    
-        })
+            } else if(prod.seccion === "lacteos"){
+                contenedorProductosLacteos.appendChild(div);
 
-    });
+            };
+    
+            //aca configuro el boton "agregar" al carrito
+            const boton = document.getElementById(`agregar${prod.id}`);
+
+            boton.addEventListener("click", () => {
+                agregarcarrito(prod.id);    
+            })
+
+        }));
 }
 
 
-//Defino mis funciones principales para gestionar la funcionalidad del carro de compras
+//Defino mis funciones principales para gestionar la funcionalidad del carro de compras.
+
+//avisa que el producto se agrego, corrobora que no exista y en caso afirmativo, suma una unidad en cantidad.
 const agregarcarrito = (prodId) => {
 
     Toastify({
         text: "Se agrego el Producto con Exito",
+        duration: 1000,
         className: "info",
         style: {
           background: "linear-gradient(to right, #393E46, #497174)",
@@ -93,38 +84,79 @@ const agregarcarrito = (prodId) => {
         })
     } else {
 
-        const item = listaDeProductos.find((prod) => prod.id === prodId);
-        carritoCompras.push(item);
-        console.log(carritoCompras);
+        fetch("../js/listadeproductos.json")
+            .then( (resp) => resp.json() )
+            .then( (listaproductos) => {
+                const item = listaproductos.find( (prod) => prod.id === prodId);
+                carritoCompras.push(item);
+                actualizarCarrito();
+             })             
     }
 
     actualizarCarrito();
 }
 
+//quita el producto del array carritoCompras. En caso que existan varias unidades solo quita una.
 const eliminarDelCarrito = (prodId) => {
-    const item = carritoCompras.find((prod) => prod.id === prodId);
 
-    if  (item.cantidad == 1){  
-        const indice = carritoCompras.indexOf(item);
-        carritoCompras.splice(indice, 1);
+    Swal.fire({
+        title: 'Desea quitar el producto?',
+        text: "Una unidad sera eliminada del Carrito",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, quitar'
+        }).then((result) => {
 
-    } else {
-        item.cantidad--;
-       
-    }
+            if (result.isConfirmed) {
 
-    actualizarCarrito();
+                const item = carritoCompras.find((prod) => prod.id === prodId);
+                if  (item.cantidad == 1){  
+                    const indice = carritoCompras.indexOf(item);
+                    carritoCompras.splice(indice, 1);
+                } else {
+                    item.cantidad--;     
+                }
+
+                Swal.fire(
+                'Borrado',
+                'Se elimino el producto',
+                'success'
+                )    
+            }
+
+            actualizarCarrito();
+        })
 }
 
+//Deja el array carritoCompras vacio
 botonVaciar.addEventListener("click", ()=> {
-    //let confirm = confirm("Desea vaciar el Carro de compras?"); NO SE USA DE ESTE MODO. ERROR SEMANTICO.
 
-    if(confirm){
-        carritoCompras.length = 0;
-        actualizarCarrito();    
-    }
+    Swal.fire({
+        title: 'Desea Eliminar todos los productos?',
+        text: "El carrito de compras quedara vacio",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+        }).then((result) => {
+
+            if (result.isConfirmed) {
+
+                carritoCompras.length = 0;
+
+                Swal.fire(
+                'Se vacio el carrito',
+                )    
+            }
+
+            actualizarCarrito();
+        })
 })
 
+//actualizacion del carro luego de alguna modificacion por parte de las funciones anteriores.
 const actualizarCarrito = () => {
 
     contenedorCarrito.innerHTML = "";
@@ -143,6 +175,7 @@ const actualizarCarrito = () => {
 
     })
 
+    // Contador del carro, suma total de productos y guardado local.
     contadorCarrito.innerText = carritoCompras.length;
 
     precioTotal.innerText = carritoCompras.reduce((acc, prod) => (acc + prod.precio*prod.cantidad), 0);

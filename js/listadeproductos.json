@@ -31,4 +31,4 @@
     {"id": 30, "img": "img/productos/vegetalex-pd.2.jpg" , "descripcion": "Vegetalex caja 4u.", "precio": 240, "destacado": 0, "seccion": "lacteos", "cantidad": 1},
     {"id": 31, "img": "img/productos/yogurt.jpeg", "descripcion": "Yogurt con cereales", "precio": 230, "destacado": 0, "seccion": "lacteos", "cantidad": 1},
     {"id": 32, "img": "img/productos/queso-chedar.jpeg" , "descripcion": "Queso Cheddar", "precio": 460, "destacado": 0, "seccion": "lacteos", "cantidad": 1}
-    ]
+]
