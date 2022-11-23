@@ -130,33 +130,47 @@ const eliminarDelCarrito = (prodId) => {
         })
 }
 
-//Deja el array carritoCompras vacio
+// En caso de tener productos, vacia el array carritoCompras
 botonVaciar.addEventListener("click", ()=> {
 
-    Swal.fire({
-        title: 'Desea Eliminar todos los productos?',
-        text: "El carrito de compras quedara vacio",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Aceptar'
-        }).then((result) => {
-
-            if (result.isConfirmed) {
-
-                carritoCompras.length = 0;
-
-                Swal.fire(
-                'Se vacio el carrito',
-                )    
+    if(carritoCompras.length == 0){
+        Swal.fire({
+            title: 'El carrito de compras se encuentra vacio',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
             }
-
-            actualizarCarrito();
         })
+
+    } else {
+
+        Swal.fire({
+            title: 'Desea Eliminar todos los productos?',
+            text: "El carrito de compras quedara vacio",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Aceptar'
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    carritoCompras.length = 0;
+
+                    Swal.fire(
+                    'Se vacio el carrito',
+                    )    
+                }
+
+                actualizarCarrito();
+            })
+        }
 })
 
-//actualizacion del carro luego de alguna modificacion por parte de las funciones anteriores.
+
 const actualizarCarrito = () => {
 
     contenedorCarrito.innerHTML = "";
@@ -182,5 +196,53 @@ const actualizarCarrito = () => {
 
     localStorage.setItem("claveCarrito", JSON.stringify(carritoCompras));
 }
+
+
+
+//Finalizar compra
+
+(() => {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+  
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+
+
+const buttonFinalizar = document.getElementById("btnFinalizar");
+buttonFinalizar.addEventListener("click", () => {
+
+    if(carritoCompras.length == 0){
+        Swal.fire({
+            title: 'El carrito de compras se encuentra vacio',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+    } else {
+
+        document.querySelector(".contenedorOrdenCompra").style.display ="flex";
+    }
+})
+
+const buttonVolver = document.getElementById("btnSeguir");
+buttonVolver.addEventListener("click", ()=> {
+    document.querySelector(".contenedorOrdenCompra").style.display ="none";
+})
 
 

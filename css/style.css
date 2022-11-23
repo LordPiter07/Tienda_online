@@ -185,6 +185,31 @@ body .mainProductos {
       background-color: #0D4C92;
       color: white;
       padding: 5px; }
+  body .mainProductos .contenedorOrdenCompra {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100wh;
+    height: 100vh;
+    position: fixed;
+    top: 0; }
+    body .mainProductos .contenedorOrdenCompra form {
+      display: flex;
+      height: 330px;
+      width: 70%;
+      background-color: #59bcce;
+      padding: 20px;
+      border-radius: 5px;
+      position: relative; }
+      body .mainProductos .contenedorOrdenCompra form div input {
+        display: block; }
+      body .mainProductos .contenedorOrdenCompra form .btnOrdenCompra {
+        margin-left: 150px;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-items: center; }
   body .mainProductos div div .productoEnCarrito {
     margin: 0 0 15px 30px; }
     body .mainProductos div div .productoEnCarrito img {
