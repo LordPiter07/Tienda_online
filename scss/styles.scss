@@ -300,6 +300,15 @@ body{
             }
         }
         div{
+            .btnVaciarCarrito{
+                background: #0D4C92;
+                color: white;
+            }
+            .btnFinalizar{
+                background: #54B435;
+                color: white;
+                margin-top: 3px;
+            }
             div{
                 .productoEnCarrito{
                     margin: 0 0 15px 30px;

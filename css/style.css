@@ -210,6 +210,13 @@ body .mainProductos {
         display: flex;
         flex-direction: row;
         justify-items: center; }
+  body .mainProductos div .btnVaciarCarrito {
+    background: #0D4C92;
+    color: white; }
+  body .mainProductos div .btnFinalizar {
+    background: #54B435;
+    color: white;
+    margin-top: 3px; }
   body .mainProductos div div .productoEnCarrito {
     margin: 0 0 15px 30px; }
     body .mainProductos div div .productoEnCarrito img {

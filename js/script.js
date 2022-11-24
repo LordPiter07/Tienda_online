@@ -201,26 +201,6 @@ const actualizarCarrito = () => {
 
 //Finalizar compra
 
-(() => {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-  
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-
-
 const buttonFinalizar = document.getElementById("btnFinalizar");
 buttonFinalizar.addEventListener("click", () => {
 
@@ -237,12 +217,40 @@ buttonFinalizar.addEventListener("click", () => {
     } else {
 
         document.querySelector(".contenedorOrdenCompra").style.display ="flex";
+        validarFormulario();
     }
 })
+
+
+
+const validarFormulario = () => {
+
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (form.checkValidity()) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Realizaste la compra!',
+                    text: 'Un mail estara llegando a la casilla indicada con los pasos a seguir para recibir tus productos.',
+                  }).then((result) => {
+                    
+                    form.submit();
+                    carritoCompras.length = 0;
+                    actualizarCarrito();
+                  })          
+            }
+
+            event.preventDefault();
+            form.classList.add('was-validated');    
+                                 
+        }, false)
+    })
+}
+
 
 const buttonVolver = document.getElementById("btnSeguir");
 buttonVolver.addEventListener("click", ()=> {
     document.querySelector(".contenedorOrdenCompra").style.display ="none";
 })
-
-
