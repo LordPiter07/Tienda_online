@@ -211,12 +211,24 @@ body .mainProductos {
         flex-direction: row;
         justify-items: center; }
   body .mainProductos div .btnVaciarCarrito {
+    width: 90%;
+    align-self: center;
     background: #0D4C92;
-    color: white; }
+    color: white;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 1px 1px 10px black;
+    font-weight: 600; }
   body .mainProductos div .btnFinalizar {
+    width: 90%;
+    align-self: center;
     background: #54B435;
     color: white;
-    margin-top: 3px; }
+    margin-top: 5px;
+    border-radius: 8px;
+    border-style: none;
+    box-shadow: 1px 1px 10px black;
+    font-weight: 600; }
   body .mainProductos div div .productoEnCarrito {
     margin: 0 0 15px 30px; }
     body .mainProductos div div .productoEnCarrito img {

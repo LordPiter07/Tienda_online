@@ -233,7 +233,7 @@ const validarFormulario = () => {
                 Swal.fire({
                     icon: 'success',
                     title: 'Realizaste la compra!',
-                    text: 'Un mail estara llegando a la casilla indicada con los pasos a seguir para recibir tus productos.',
+                    text: 'Se envio un mail a la casilla indicada, con los pasos a seguir para recibir tus productos.',
                   }).then((result) => {
                     
                     form.submit();

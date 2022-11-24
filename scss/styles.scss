@@ -301,13 +301,25 @@ body{
         }
         div{
             .btnVaciarCarrito{
+                width: 90%;
+                align-self: center;
                 background: #0D4C92;
                 color: white;
+                border-radius: 8px;
+                border-style: none;
+                box-shadow: 1px 1px 10px black;
+                font-weight: 600;
             }
             .btnFinalizar{
+                width: 90%;
+                align-self: center;
                 background: #54B435;
                 color: white;
-                margin-top: 3px;
+                margin-top: 5px;
+                border-radius: 8px;
+                border-style: none;
+                box-shadow: 1px 1px 10px black;
+                font-weight: 600;
             }
             div{
                 .productoEnCarrito{

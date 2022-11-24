@@ -40,7 +40,6 @@ function cargarProductosDestacados(){
 }
 
 
-// metodo de la clase gestorProductos que muestra mensajes dinamicos dentro del DIV "Productos destacados"
 function cajaDeMensajes(msj){
    const cajaMsj = document.querySelector("#cajaMsj");
    cajaMsj.innerHTML = msj;
